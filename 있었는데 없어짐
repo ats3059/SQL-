@@ -1,0 +1,5 @@
+SELECT A.ANIMAL_ID, A.NAME
+FROM ANIMAL_INS a,ANIMAL_OUTS b
+where a.ANIMAL_ID =  b.ANIMAL_ID
+and 0 < (a.datetime - b.datetime)
+order by a.datetime ;
