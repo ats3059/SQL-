@@ -1,0 +1,10 @@
+SELECT YEAR(os.sales_date) as YEAR
+    ,MONTH(os.sales_date) as MONTH
+    ,ui.GENDER as GENDER
+    ,count(distinct os.user_id) as USERS
+FROM USER_INFO ui
+    JOIN ONLINE_SALE os
+    ON ui.user_id = os.user_id
+group by year , month , ui.gender
+having ui.gender is not null
+order by year asc , month asc , gender asc
